@@ -1,3 +1,6 @@
+#ifndef MPU6050_DIY_HPP
+#define MPU6050_DIY_HPP
+
 #include <vector>
 #include <string>
 #include <math.h>
@@ -155,3 +158,5 @@ public:
     return result;
   }
 };
+
+#endif
