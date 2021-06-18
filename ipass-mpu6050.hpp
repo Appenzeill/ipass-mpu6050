@@ -51,7 +51,8 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
 
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4); 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
+
 
     return result;
   }
@@ -70,7 +71,8 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
 
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4); 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
+
 
     return result;
   }
@@ -89,7 +91,8 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
 
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4) / 1; 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
+
 
     return result;
   }
@@ -108,7 +111,7 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
     
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4); 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
 
     return result;
   }
@@ -127,7 +130,8 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
     
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4); 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
+
 
     return result;
   }
@@ -146,7 +150,7 @@ public:
     i2c_bus.read(i2c_address).read(second_half);
     
     result = (first_half << 8) + second_half;
-    result = round(result / 65.4); 
+    result = (round(result / 65.4) + 250) / 2.77777777; 
 
     return result;
   }
