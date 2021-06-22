@@ -4,6 +4,10 @@
 #include <vector>
 #include <string>
 #include <math.h>
+/// \brief
+/// Class om de data van de mpu6050 breakout board op te vragen.
+/// \details
+/// De functie geeft de mogelijkheid om de mpu6050 wakker te maken en de gyroscoop en acceleromater terug te geven.
 class mpu6050_diy {
 private:
   hwlib::i2c_bus & i2c_bus;
@@ -27,18 +31,30 @@ private:
   uint8_t gyro_z_l    = 0x48;
 
 public:
-  // Constructor van de class.
+  /// \brief
+  /// Constructor voor de mpu6050_diy class 
+  /// \details
+  /// De constructor vraagt om een hwlib::i2c_bus en een uint_fast8_t i2c address.
   mpu6050_diy(hwlib::i2c_bus & i2c_bus, uint_fast8_t i2c_address):
     i2c_bus( i2c_bus ),
     i2c_address( i2c_address)
   {}
-
+  
+  /// \brief
+  /// Functie om de mpu6050 breakout board wakker te maken.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
   void wakeup() {
     const uint8_t data[] = {wake_up, 0};
     size_t byte_size = sizeof(data);
 
     i2c_bus.write(i2c_address).write(data, byte_size);
   }
+
+  /// \brief
+  /// Functie om de acceleratie data van X op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
 
   int16_t getAccelX() {
     uint8_t first_half, second_half;
@@ -60,6 +76,10 @@ public:
     return result;
   }
 
+  /// \brief
+  /// Functie om de acceleratie data van Y op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
   int16_t getAccelY() {
     uint8_t first_half, second_half;
     int16_t result;
@@ -79,8 +99,12 @@ public:
 
     return result;
   }
-
-    int16_t getAccelZ() {
+  
+  /// \brief
+  /// Functie om de acceleratie data van Z op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
+  int16_t getAccelZ() {
     uint8_t first_half, second_half;
     int16_t result;
     
@@ -100,6 +124,10 @@ public:
     return result;
   }
 
+  /// \brief
+  /// Functie om de gyroscoop data van X op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
   int16_t getGyroX() {
     uint8_t first_half, second_half;
     int16_t result;
@@ -119,6 +147,10 @@ public:
     return result;
   }
 
+  /// \brief
+  /// Functie om de gyroscoop data van Y op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
   int16_t getGyroY() {
     uint8_t first_half, second_half;
     int16_t result;
@@ -139,7 +171,11 @@ public:
     return result;
   }
 
-   int16_t getGyroZ() {
+  /// \brief
+  /// Functie om de gyroscoop data van Z op te halen.
+  /// \details
+  /// De functie is void, en heeft geen parameters.
+  int16_t getGyroZ() {
     uint8_t first_half, second_half;
     int16_t result;
     
